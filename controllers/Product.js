@@ -71,6 +71,9 @@ export const getProducts = async (req,res ,next) => {
         }
 }
 
+
+// GET A PERTICULAR PRODUCT DETAILS from the product id -------------------------------
+
 export const getProductById = async (req,res,next) => {
     try{
         const {id} = req.params;

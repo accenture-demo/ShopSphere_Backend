@@ -80,8 +80,8 @@ try {
     const { productId } = req.body;
     const userJWT = req.user;
     const user = await User.findById(userJWT.id);
-    console.log(productId);
-    console.log("hello from fav func ");
+    // console.log(productId);
+    // console.log("hello from fav func ");
 
     if (!user.favourites.includes(productId)) {
     user.favourites.push(productId);
@@ -101,9 +101,6 @@ try {
     const { productId } = req.body;
     const userJWT = req.user;
     const user = await User.findById(userJWT.id);
-
-    // user.favourites = user.favourites.filter((fav) => !fav.equals(productId));
-
     user.favourites.remove(productId) ;
 
     await user.save();
